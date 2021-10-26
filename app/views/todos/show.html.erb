@@ -1,0 +1,14 @@
+
+<p>
+  <strong>user_name:</strong>
+  <%= @todo.user_name %>
+</p>
+
+<p>
+  <strong>password:</strong>
+  <%= @todo.password %>
+</p>
+
+<%= link_to 'Edit', edit_todo_path(@todo) %> |
+<%= link_to 'Back', todos_path %>
+ 

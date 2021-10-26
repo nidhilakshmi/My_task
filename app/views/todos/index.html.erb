@@ -1,1 +1,27 @@
 <h1>Todo</h1>
+  <thead>
+    <tr>
+      <th>user_name</th>
+      <br>
+      <br>
+      <th>password</th>
+      
+    </tr>
+  </thead>
+  <tbody> 
+
+  	<br>
+  	<br>
+    <% @todos.each do |todo| %>
+      <tr>
+        <td><%= todo.user_name %></td>
+        <td><%= todo.password %></td>
+        <td><%= link_to 'Show', todo %></td>
+        <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
+        <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure ,do you want to detele this ?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
