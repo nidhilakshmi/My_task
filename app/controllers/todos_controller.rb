@@ -12,7 +12,7 @@ class TodosController < ApplicationController
 	@todo = Todo.new(todo_params)
 
 	if @todo.save
-		redirect_to edit_todo_path(@todo), notice: "Heyy! Todo was created"
+		redirect_to @todo, notice: "Heyy! Todo was created"
 	else render new notice: "sorry try next time "
 	end
 	end
@@ -24,11 +24,16 @@ class TodosController < ApplicationController
 	 end
 
 	 def update
-	 	if @todo.update.todo_params
+	 	if @todo.update(todo_params)
 	 		redirect_to @todo, notice: "Heyy! Todo was updated"
 	 	else render new notice: "Sorry we can't update"
-	 	end
 	 end
+	  def destroy
+    @todo.destroy
+  			redirect_to todos_path, notice: "Student was successfully destroyed." 
+        
+    end
+  end
 
 
 	private 
