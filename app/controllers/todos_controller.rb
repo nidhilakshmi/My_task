@@ -30,7 +30,7 @@ class TodosController < ApplicationController
 	 end
 	  def destroy
          	@todo.destroy
-  			redirect_to todos_path, notice: "Student was successfully destroyed." 
+  			redirect_to todos_path, notice: "Todo was successfully destroyed." 
         
     	end
   end
