@@ -1,27 +1,12 @@
-<h1>Todo</h1>
-  <thead>
-    <tr>
-      <th>user_name</th>
-      <br>
-      <br>
-      <th>password</th>
-      <th colspan="3"></th>
-      </tr>
-  </thead>
-  <tbody> 
-    <% @todos.each do |todo| %>
-      <tr>
-        <td><%= todo.user_name %></td>
-        <td><%= todo.password %></td>
-        <br><br>
-        <td><%= link_to 'Show', todo %></td>
-        <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
-        <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure ,do you want to detele this ?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-<br>
-<%= link_to 'New todo', new_todo_path %>
+    <% @todos.each do |todo| %>
+      <%=link_to todo.user_name,todo %>
+      <br>
+    <% end %>
+
+
+    <% if user_signed_in? %>
+    <%= link_to 'New todo', new_todo_path %> 
+    <% else %>
+    <% link_to 'Admin_login',new_user_session_session_path %>
+    <% end %>

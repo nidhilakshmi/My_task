@@ -9,6 +9,9 @@
   <%= @todo.password %>
 </p>
 
+
+<% if user_signed_in? %>
 <%= link_to 'Edit', edit_todo_path(@todo) %> |
+<% else %>
 <%= link_to 'Back', todos_path %>
- 
+<% end %>
