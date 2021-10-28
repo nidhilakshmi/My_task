@@ -1,5 +1,6 @@
 class TodosController < ApplicationController
 	before_action :find_todo, only: %i[show edit update destroy]
+	before_filter :authenticate_user!, except: %i[show index]
 	def index
 		 @todos = Todo.all
 	end
