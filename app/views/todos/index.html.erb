@@ -1,16 +1,8 @@
 
     <% @todos.each do |todo| %>
-      <%=link_to todo.user_name,todo %>
+      <h2><%=link_to todo.user_name,todo %></h2>
       <br> 
-
+    <p align="right">Posted <%= time_ago_in_words(todo.created_at) %> ago</p>
+    <hr>
     <% end %>
 
-
-    <% if user_signed_in? %>
-    <%= link_to 'New todo', new_todo_path %> 
-   <%= link_to'logout', destroy_user_session_path, :method => :delete %>
-   <% else %>
-    <%= link_to 'Admin_login',new_user_session_path %>
-    <% end %>
-
-   
