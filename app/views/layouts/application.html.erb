@@ -11,8 +11,22 @@
   </head>
 
   <body>
+    <nav class= "navbar navbar-inverse">
+    <%= link_to 'My task', root_path, class: 'navbar-brand'%>
+   
+    <div class= "container"></div>
+    <p class= "navbar-text navbar-right">
+    <% if user_signed_in? %>
+    <%= link_to 'New todo', new_todo_path %> 
+    <%= link_to'logout', destroy_user_session_path, :method => :delete %>
+    <% else %>
+    <%= link_to 'Admin_login',new_user_session_path %>
+    <% end %>
+    </p>
+    </nav>
+    
     <p id="notice"><%= notice %></p>
-
+    <div class= "col-md-10 col-md-offset-1"> </div>
     <%= yield %>
   </body>
 </html>
