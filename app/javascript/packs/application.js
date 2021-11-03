@@ -11,4 +11,4 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-#= require social-share-button
+= require social-share-button
